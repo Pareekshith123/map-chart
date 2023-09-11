@@ -1,0 +1,21 @@
+<div id="map" style="height: 700px; width: 700px;z-index:10;" (click)="showTable()"></div>
+
+<!-- Popup card for the table -->
+<div *ngIf="showMapTableFlag" class="popup-card">
+  <button class="close-button" (click)="closeTable()">Close</button>
+  <table class="custom-table">
+    <!-- Table content goes here -->
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
