@@ -13,6 +13,7 @@ export class MileComponent implements OnInit {
   isLoading: boolean = true;
   myData: any[] = [];
   HasEot:any="HasEot";
+  isMileOn:boolean=false;
   departmentName = ""
   constructor(private http: ApiService) {}
 
@@ -66,6 +67,7 @@ export class MileComponent implements OnInit {
           point: {
             events: {
               click: function () {
+                
                 const tableContainer = document.getElementById('tableContainer');
                 if (tableContainer) {
                   tableContainer.style.display = 'block';
@@ -73,16 +75,18 @@ export class MileComponent implements OnInit {
                   // Generate and populate the table content based on projectDetails
                   let tableContent = `
                  
-                    <table>
+                    <table class="tablehead">
                       <tr><th>Department Name</th><th>Sanctioned Cost</th><th>Has EOT</th></tr>
                   `;
   
                   // Loop through dataPoints and add rows for each item
                   for (const point of dataPoints) {
+                   if(point.name!='' && point.y!=0){
                     tableContent += `
-                      <tr><td>${point.name}</td><td>${point.y} Cr</td><td>${point.abc}</td></tr>
-                    
-                    `;
+                    <tr><td>${point.name}</td><td>${point.y} Cr</td><td>${point.abc}</td></tr>
+                  
+                  `;
+                   }
                   }
   
                   tableContent += `</table>`;
@@ -121,5 +125,7 @@ export class MileComponent implements OnInit {
       ]
     };
   }
-  
+  showmilechart(){
+    this.isMileOn=true;
+  }
 }

@@ -3321,7 +3321,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "580",
-                "district": "Yadgir",
+                "district": "Yadagiri",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -5464,7 +5464,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "560",
-                "district": "Koppal",
+                "district": "Koppala",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -6109,7 +6109,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "561",
-                "district": "Gadag",
+                "district": "Gadaga",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -15902,7 +15902,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "583",
-                "district": "Bengaluru Rural",
+                "district": "Bangalore Rural",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -17272,7 +17272,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "572",
-                "district": "Bengaluru Urban",
+                "district": "Bangalore Urban",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -19063,7 +19063,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "571",
-                "district": "Tumakuru",
+                "district": "Tumkur",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"

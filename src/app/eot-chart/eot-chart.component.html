@@ -1,8 +1,28 @@
-<div style="position: relative;">
+<div id="Eot" style="height: 700px; width: 100%; position: relative;" (click)="showTable()">
     <highcharts-chart
-    [Highcharts]="Highcharts"
-    [options]="chartOptions"
-    style="width: 100%; height: 700px; display: block;overflow-y: auto; "
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+      style="width: 100%; height: 700px; display: block; overflow-y: auto;"
     ></highcharts-chart>
-  <div id="tableContainer" style="display: none; z-index: 100; top: 0; display: flex; justify-content: center;"></div>
   </div>
+  
+  <!-- Popup card for the table -->
+  <div *ngIf="showEotTable" class="popup-card">
+    <button class="close-button" (click)="closeTable()">Close</button>
+    <table class="custom-table">
+      <!-- Table content goes here -->
+      <thead>
+        <tr>
+          <th>Department Name</th>
+          <th>Header 2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data 1</td> <!-- Bind the selected department name here -->
+          <td>Data 2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,69 +1,68 @@
 /* In your CSS file */
 #map {
-    width: 100%; /* Set the width to 100% of the parent container */
-    height: 600px; /* Set a fixed or appropriate height for your map */
-    position:relative; 
-    display: flex;/* Ensure it has a position set */
-    border: 1px solid #000; /* Add a border for visibility, you can remove this in production */
-  }
-  /* Add this CSS to your component's CSS file, e.g., karnataka-map-app.component.css */
+  width: 100%; /* Set the width to 100% of the parent container */
+  height: 600px; /* Set a fixed or appropriate height for your map */
+  position:relative; 
+  display: flex;/* Ensure it has a position set */
+  border: 1px solid #000; /* Add a border for visibility, you can remove this in production */
+}
+/* Add this CSS to your component's CSS file, e.g., karnataka-map-app.component.css */
 
 /* Style for the district tooltips */
 .district-tooltip {
-  background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
-  border: 1px solid #ccc; /* Border */
-  padding: 6px 12px; /* Padding */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 14px; /* Font size */
-  font-weight: bold; /* Font weight */
-  text-align: center; /* Text alignment */
-  white-space: nowrap; /* Prevent line breaks */
-  max-height: 100px;
-  max-width: 100px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
+border: 1px solid #ccc; /* Border */
+padding: 6px 12px; /* Padding */
+border-radius: 5px; /* Rounded corners */
+font-size: 14px; /* Font size */
+font-weight: bold; /* Font weight */
+text-align: center; /* Text alignment */
+white-space: nowrap; /* Prevent line breaks */
+max-height: 100px;
+max-width: 100px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
 }
 /* Define styles for the popup card */
 .popup-card {
-    position: absolute;
-    width: 300px; /* Adjust the width as needed */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
-    z-index: 100;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a box shadow for the card effect */
-    padding: 20px;
-  }
-  
-  /* Style the close button */
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    background-color: #f1f1f1;
-    border: none;
-    padding: 5px 10px;
-    font-size: 14px;
-   
-  }
-  .close-button:hover {
-    background-color: #ddd;
-  }
-  
-  /* Style the table inside the popup card */
-  .custom-table {
-    width: 100%;
-  }
-  
-  /* Style the table header (thead) */
-  .custom-table thead {
-    background-color: purple;
-    color: white; /* Text color for header cells */
-  }
-  
-  /* Style the table body (tbody) */
-  .custom-table tbody {
-    background-color: lightgrey;
-  }
-  
+  position: absolute;
+  width: 300px; /* Adjust the width as needed */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a box shadow for the card effect */
+  padding: 20px;
+}
+
+/* Style the close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+ 
+}
+.close-button:hover {
+  background-color: #ddd;
+}
+
+/* Style the table inside the popup card */
+.custom-table {
+  width: 100%;
+}
+
+/* Style the table header (thead) */
+.custom-table thead {
+  background-color: purple;
+  color: white; /* Text color for header cells */
+}
+
+/* Style the table body (tbody) */
+.custom-table tbody {
+  background-color: lightgrey;
+}

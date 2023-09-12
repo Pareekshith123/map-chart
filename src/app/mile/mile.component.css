@@ -9,7 +9,8 @@
     max-height: 80vh; /* Adjust the height as needed */
     overflow-y: auto;
     background-blend-mode: lighten;
-    background-color: rgb(228, 126, 43);
+    
+    background-color: rgb(252, 252, 252);
     border: 4px green;}
     /* table-styles.css */
     
@@ -18,13 +19,18 @@
         width: 100%;
         border-collapse: collapse;
         border: 1px solid #ddd;
+        
       }
       
       /* Style for table headers */
       .my-table th {
-        background-color: #f2f2f2;
+        background-color: purple;
+        color: white; 
         padding: 8px;
         text-align: left;
+      }
+      .tablehead{
+        background-color: purple;
       }
       
       /* Style for table rows */

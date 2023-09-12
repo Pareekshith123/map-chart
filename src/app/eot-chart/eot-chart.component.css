@@ -1,0 +1,54 @@
+/* Style for the Highcharts chart */
+.highcharts-container {
+    width: 100%;
+    height: 700px;
+    display: block;
+    overflow-y: auto;
+  }
+  
+  /* Style for the table container (popup) */
+  /* Style for the table container (popup) */
+/* Define styles for the popup card */
+.popup-card {
+  position: absolute;
+  width: 300px; /* Adjust the width as needed */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a box shadow for the card effect */
+  padding: 20px;
+}
+
+/* Style the close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+ 
+}
+.close-button:hover {
+  background-color: #ddd;
+}
+
+/* Style the table inside the popup card */
+.custom-table {
+  width: 100%;
+}
+
+/* Style the table header (thead) */
+.custom-table thead {
+  background-color: purple;
+  color: white; /* Text color for header cells */
+}
+
+/* Style the table body (tbody) */
+.custom-table tbody {
+  background-color: lightgrey;
+}

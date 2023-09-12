@@ -13,7 +13,8 @@ export class EotChartComponent implements OnInit {
   isLoading: boolean = true;
   myData: any[] = [];
   HasEot:any="HasEot";
-  departmentName = ""
+  departmentName = "";
+  showEotTable:boolean=false;
   constructor(private http: ApiService) {}
 
   ngOnInit(): void {
@@ -125,5 +126,12 @@ export class EotChartComponent implements OnInit {
       ]
     };
   }
+  showTable(){
+    this.showEotTable=true;
+  }
+  closeTable(){
+    this.showEotTable=false
+  }
+  
   
 }
