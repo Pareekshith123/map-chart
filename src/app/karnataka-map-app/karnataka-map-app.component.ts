@@ -91,7 +91,24 @@ export class KarnatakaMapAppComponent implements OnInit {
               "Bangalore Urban": '#FFA500',
               "Kolar": '#00FF00',
               "Chikkaballapura": '#7FFFD4',
-              "Raichur":'orange'
+              "Raichur":'orange',
+              "Vijayapura":'palegreen',
+              "Gadag":'palepurple',
+              "Uttara Kannada":'#00008B',
+              "Davanagere":'#FF00FF',
+              "Dakshina Kannada":'orange',
+              "Chikmagalur":'#800000',
+              "Mysore":'#006A4E',
+              "Mandya":'#3A5F0B',
+              "Ramanagara":'#08A04B',
+              "Chamarajanagara":'#DAEE01',
+              "Kodagu":'#FFA0500',
+              "Udupi":'#EB5406',
+              "Chikkaballapur":'#EB5406',
+              "Dharwad":'#FC6C85',
+              "Koppal":'#C45AEC',
+              "Ballari":'#C21E56'
+
             };
             const district = feature?.properties?.district;
             const color = colors[district] || 'grey';

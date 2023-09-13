@@ -26,31 +26,36 @@
 .popup-card {
   
   position: absolute;
-  width: 300px; /* Adjust the width as needed */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
+  width: fit-content; /* Adjust the width as needed */
+  top: 30%; /* Center vertically */
+  left: 40%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Center both vertically and horizontally */
   z-index: 100;
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a box shadow for the card effect */
-  padding: 20px;
+  padding: 10px;
 }
 
 /* Style the close button */
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  background-color:purple;
+  color: #ffffff;
+  top: 5px;
+  right: 7px;
   cursor: pointer;
-  background-color: #f1f1f1;
-  border: none;
-  padding: 5px 10px;
-  font-size: 14px;
+  
+  border: 2px solid rgb(248, 245, 245);
+  border-radius: 100%;
+  padding: 5px 5px;
+  font-size: 16px;
  
 }
-.close-button:hover {
-  background-color: #ddd;
+.close-button:hover{
+  background-color: red;
+  color: #ffffff;
 }
+
 
 /* Style the table inside the popup card */
 .custom-table {
@@ -61,9 +66,12 @@
 
 /* Style the table header (thead) */
 .custom-table thead {
+  /* display: flex;
+  justify-content: space-between; */
   background-color: purple;
   color: white; /* Text color for header cells */
 }
+
 
 /* Style the table body (tbody) */
 .custom-table tbody {

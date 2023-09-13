@@ -3,7 +3,7 @@
 
 <!-- Popup card for the table -->
 <div *ngIf="showMapTableFlag" class="popup-card">
-  <button class="close-button" (click)="closeTable()">Close</button>
+  <button class="close-button" (click)="closeTable()">X</button>
   <table class="custom-table">
     <!-- Table content goes here -->
     <thead>
@@ -11,13 +11,26 @@
         <th>District:</th>
         <th>Projects:</th>
         <th>ProjectTitle</th>
-        <th></th>
+        <th>Physical-Progress</th>
+        <th>Financial-Progress</th>
+        <th>Project-Tender-Amount</th>
+        <th>ProjectRelease-Amount</th>
+        <th>Paid-to-contractor</th>
+        <th>contractor-Amount-Balance</th>
+
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>{{selectedDistrict}}</td>
         <td>{{projCount}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
       </tr>
     </tbody>
