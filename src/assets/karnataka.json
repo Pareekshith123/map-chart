@@ -3321,7 +3321,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "580",
-                "district": "Yadagiri",
+                "district": "Yadgir",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -4014,7 +4014,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "556",
-                "district": "Bagalkote",
+                "district": "Bagalkot",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -5464,7 +5464,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "560",
-                "district": "Koppala",
+                "district": "Koppal",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -6109,7 +6109,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "561",
-                "district": "Gadaga",
+                "district": "Gadag",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -11488,7 +11488,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "568",
-                "district": "Shivamogga",
+                "district": "Shimoga",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -12850,7 +12850,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "570",
-                "district": "Chikkamagaluru",
+                "district": "Chikmagalur",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -13611,7 +13611,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "582",
-                "district": "Chikkaballapura",
+                "district": "Chikkaballapur",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -17272,7 +17272,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "572",
-                "district": "Bangalore Urban",
+                "district": "Bengaluru Urban",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"
@@ -22048,7 +22048,7 @@
             "type": "Feature",
             "properties": {
                 "dt_code": "577",
-                "district": "Mysuru",
+                "district": "Mysore",
                 "st_code": "29",
                 "year": "2011_c",
                 "st_nm": "Karnataka"

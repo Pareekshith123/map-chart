@@ -9,21 +9,22 @@
 /* Add this CSS to your component's CSS file, e.g., karnataka-map-app.component.css */
 
 /* Style for the district tooltips */
-.district-tooltip {
-background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
-border: 1px solid #ccc; /* Border */
-padding: 6px 12px; /* Padding */
-border-radius: 5px; /* Rounded corners */
-font-size: 14px; /* Font size */
-font-weight: bold; /* Font weight */
-text-align: center; /* Text alignment */
-white-space: nowrap; /* Prevent line breaks */
-max-height: 100px;
-max-width: 100px;
-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+/* Tooltip style with transparent background */
+.leaflet-tooltip.district-tooltip {
+  background-color: transparent !important; /* Set the background color to transparent */
+  border: none !important; /* Remove the border */
+  box-shadow: none !important; /* Remove the box shadow */
+  font-size: 14px; /* Font size */
+  font-weight: bold; /* Font weight */
+  white-space: nowrap; /* Prevent line breaks */
 }
+/* Add styles for the custom-tooltip class */
+
+
+
 /* Define styles for the popup card */
 .popup-card {
+  
   position: absolute;
   width: 300px; /* Adjust the width as needed */
   top: 50%; /* Center vertically */
@@ -66,3 +67,41 @@ box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
 .custom-table tbody {
   background-color: lightgrey;
 }
+
+.district-project-count {
+  /* Ensure that the element doesn't interfere with map interaction */
+}
+/* Define a keyframes animation for bouncing */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Start and end positions */
+  }
+  40% {
+    transform: translateY(-10px); /* Bounce up */
+  }
+  60% {
+    transform: translateY(-5px); /* Bounce down */
+  }
+}
+
+/* Apply the bounce animation to .district-tooltip */
+/* Tooltip styles */
+/* .custom-tooltip {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  pointer-events: none;
+ 
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  font-size: 14px;
+  font-weight: bold;
+} */
+
+/* Show the tooltip on hover */
+/* .custom-tooltip.active {
+  opacity: 1;
+} */
+

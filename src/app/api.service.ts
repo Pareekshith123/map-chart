@@ -9,6 +9,7 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
   public fetchData() {
+    // return this.http.get('https://ppmsserver.sunplussoftware.com/pmms/services/overall-dashboard/getAllProjectDetails');
     return this.http.get('assets/dataSrc.json');
   }
 }

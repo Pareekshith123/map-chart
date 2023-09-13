@@ -14,8 +14,13 @@
     <tbody>
       <tr>
         <td>{{selectedDistrict}}</td>
-        <td>6</td>
+        <td>{{projCount}}</td>
       </tr>
     </tbody>
   </table>
+</div>
+<div class="custom-tooltip" *ngIf="showToolTip">
+  <strong>District: </strong>{{ hoveredDistrict }}
+  <br>
+  <strong>Projects: </strong>{{ hoveredProjectCount }}
 </div>
