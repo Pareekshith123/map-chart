@@ -1,4 +1,5 @@
-<div id="map" style="height: 700px; width: 700px;z-index:10;" (click)="showTable()"></div>
+<div id="map" style="height: 700px; width: 700px;z-index:10;" (click)="showTable()">
+</div>
 
 <!-- Popup card for the table -->
 <div *ngIf="showMapTableFlag" class="popup-card">
@@ -9,12 +10,15 @@
       <tr>
         <th>District:</th>
         <th>Projects:</th>
+        <th>ProjectTitle</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>{{selectedDistrict}}</td>
         <td>{{projCount}}</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
