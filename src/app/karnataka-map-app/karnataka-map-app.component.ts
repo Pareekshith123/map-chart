@@ -57,7 +57,7 @@ export class KarnatakaMapAppComponent implements OnInit {
       if (item.projectDTOs) {
         item.projectDTOs.forEach((project: any) => {
           const districtName = project.projectDistrict;
-          this.projectTitle[districtName].push(item.projectTitle);
+          this.projectTitle[districtName]=item.projectTitle;
           this.physicalProgress=project.physicalProgress;
           this.finaancialProgress=project.finaancialProgress;
           this.projectStatus=project.projectStatus;
