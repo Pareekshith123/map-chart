@@ -115,8 +115,8 @@ export class KarnatakaMapAppComponent implements OnInit {
             return {
               color: color,
               weight: 1.5,
-              opacity: 0.5,
-              fillOpacity: 0.8
+              opacity: 0,
+              fillOpacity: 1.5
             };
           },
           onEachFeature: (feature, layer) => {
