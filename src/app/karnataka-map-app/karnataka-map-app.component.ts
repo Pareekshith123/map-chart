@@ -19,13 +19,15 @@ export class KarnatakaMapAppComponent implements OnInit {
   hoveredDistrict: string = '';
   hoveredProjectCount: number = 0;
   showToolTip: boolean = false;
-  projectTitle:any[]=[];
+  projectTitle:{ [districtName: string]: string }={};
   physicalProgress: any;
   finaancialProgress: any;
   projectStatus: any;
   projectTenderAmount: any;
   projectSanctionedCost: any;
   projTitle: any[]=[];
+  selectedDistrictProjects: any[] = [];
+
   constructor(private http: ApiService) {}
 
   ngOnInit(): void {
@@ -57,20 +59,22 @@ export class KarnatakaMapAppComponent implements OnInit {
       if (item.projectDTOs) {
         item.projectDTOs.forEach((project: any) => {
           const districtName = project.projectDistrict;
-          this.projectTitle[districtName]=item.projectTitle;
-          this.physicalProgress=project.physicalProgress;
-          this.finaancialProgress=project.finaancialProgress;
-          this.projectStatus=project.projectStatus;
-          this.projectTenderAmount=project.projectTenderAmount;
-          this.projectSanctionedCost=project.projectSanctionedCost;
+          this.projectTitle[districtName] =item.projectTitle; 
+          this.physicalProgress = project.physicalProgress;
+          this.finaancialProgress = project.finaancialProgress;
+          this.projectStatus = project.projectStatus;
+          this.projectTenderAmount = project.projectTenderAmount;
+          this.projectSanctionedCost = project.projectSanctionedCost[0].value;
+  
           // const districtName = project.projectDistrict;
-          console.log("this.",this.projectTitle);
+          console.log("this.", this.projectTitle);
           this.districtProjectCounts[districtName] = (this.districtProjectCounts[districtName] || 0) + 1;
         });
       }
     });
     console.log("districtProjectCounts", this.districtProjectCounts);
   }
+  
 
   renderMap() {
     fetch('assets/karnataka.json')
@@ -151,11 +155,19 @@ export class KarnatakaMapAppComponent implements OnInit {
                 this.hoveredDistrict = '';
                 this.hoveredProjectCount = 0;
               });
-
               layer.on('click', () => {
                 this.selectedDistrict = districtName;
                 this.projCount = projectCount;
-                this.projTitle.push(this.getDistrictProjectTitle(this.selectedDistrict));
+                
+                this.projTitle = [];
+            
+                
+                
+                for (let i = 0; i<this.projCount; i++) {
+                    this.projTitle.push(this.getDistrictProjectTitle(this.selectedDistrict));
+                  
+                }  console.log(this.projTitle,"lily")
+             
                 this.showTable();
               });
 
@@ -177,6 +189,20 @@ export class KarnatakaMapAppComponent implements OnInit {
   getDistrictProjectTitle(districtName: any): any {
     return this.projectTitle[districtName];
   }
+  getDistrictProjectTitles(districtName: string): any[] {
+  const projects: any[] = [];
+  this.myData.forEach((item: any) => {
+    if (item.projectDTOs) {
+      item.projectDTOs.forEach((project: any) => {
+        if (project.projectDistrict === districtName) {
+          projects.push(project.projectTitle);
+        }
+      });
+    }
+  });
+  return projects;
+}
+
 
   showTable() {
     this.showMapTableFlag = true;

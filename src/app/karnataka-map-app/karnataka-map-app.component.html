@@ -8,8 +8,9 @@
     <!-- Table content goes here -->
     <thead>
       <tr>
-        <th>District:</th>
-        <th>Projects:</th>
+        <!-- <th>District:</th>
+        <th>Projects:</th> -->
+        
         <th>ProjectTitle</th>
         <th>Physical-Progress</th>
         <th>Financial-Progress</th>
@@ -21,15 +22,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{selectedDistrict}}</td>
-        <td>{{projCount}}</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr >
+        <!-- <td>{{selectedDistrict}}</td>
+        <td>{{projCount}}</td> -->
+        
+        <td >
+          <ol style="list-style: none;" *ngFor="let project of projTitle; let i=index">
+           
+            <li>{{i+1}}. {{project}}</li>
+          </ol>
+        </td>
+        <td>{{physicalProgress}}</td>
+        <td>{{finaancialProgress}}</td>
+        <td>{{projectStatus}}</td>
+        <td>{{projectTenderAmount}}</td>
+        <td>{{projectSanctionedCost}}</td>
         <td></td>
         <td></td>
       </tr>

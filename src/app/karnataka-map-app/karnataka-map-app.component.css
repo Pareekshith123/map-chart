@@ -27,10 +27,13 @@
   
   position: absolute;
   width: fit-content; /* Adjust the width as needed */
-  top: 30%; /* Center vertically */
+  top: 20%; /* Center vertically */
   left: 40%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Center both vertically and horizontally */
   z-index: 100;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  max-height:700px;
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a box shadow for the card effect */
   padding: 10px;
@@ -62,6 +65,9 @@
   display:block;
   width:fit-content;
   overflow-y: scroll;
+  max-height:690px;
+  margin-top:1%;
+  margin-bottom: 1%;
 }
 
 /* Style the table header (thead) */
@@ -73,9 +79,11 @@
 }
 
 
+
 /* Style the table body (tbody) */
 .custom-table tbody {
   background-color: lightgrey;
+ 
 }
 .indicator{
   background-color: transparent;
