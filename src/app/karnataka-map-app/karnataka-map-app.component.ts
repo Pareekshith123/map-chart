@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import * as L from 'leaflet';
 
@@ -13,7 +13,7 @@ export class KarnatakaMapAppComponent implements OnInit {
   map: any;
   showMapTableFlag: boolean = false;
   selectedDistrict: string = '';
-  myData: any[] = [];
+  data: any[] = [];
   projCount: number = 0;
   districtProjectCounts: { [districtName: string]: number } = {};
   hoveredDistrict: string = '';
@@ -27,7 +27,7 @@ export class KarnatakaMapAppComponent implements OnInit {
   projectSanctionedCost: any;
   projTitle: any[]=[];
   selectedDistrictProjects: any[] = [];
-
+  projectDistTitle:any[]=[];
   constructor(private http: ApiService) {}
 
   ngOnInit(): void {
@@ -46,7 +46,7 @@ export class KarnatakaMapAppComponent implements OnInit {
     try {
       const res: any = await this.http.fetchData().toPromise();
       console.log(res);
-      this.myData = res;
+      this.data = res;
       this.calculateDistrictProjectCounts();
     } catch (err) {
       console.log(err);
@@ -55,7 +55,7 @@ export class KarnatakaMapAppComponent implements OnInit {
 
   calculateDistrictProjectCounts() {
     this.districtProjectCounts = {};
-    this.myData.forEach((item: any) => {
+    this.data.forEach((item: any) => {
       if (item.projectDTOs) {
         item.projectDTOs.forEach((project: any) => {
           const districtName = project.projectDistrict;
@@ -64,7 +64,7 @@ export class KarnatakaMapAppComponent implements OnInit {
           this.finaancialProgress = project.finaancialProgress;
           this.projectStatus = project.projectStatus;
           this.projectTenderAmount = project.projectTenderAmount;
-          this.projectSanctionedCost = project.projectSanctionedCost[0].value;
+          this.projectSanctionedCost = project.projectSanctionedCost;
   
           // const districtName = project.projectDistrict;
           console.log("this.", this.projectTitle);
@@ -74,7 +74,45 @@ export class KarnatakaMapAppComponent implements OnInit {
     });
     console.log("districtProjectCounts", this.districtProjectCounts);
   }
-  
+  getProjectDetails( dist: string) {
+    let arrval: any = [];
+    for (let i = 0; i < this.data.length; i++) {
+
+      // if (dept === this.data[i].departmentId && line === this.data[i].lineDepartmentId) {
+        for (let j = 0; j < this.data[i].projectDTOs.length; j++) {
+          if (dist === this.data[i].projectDTOs[j].projectDistrict) {
+            let json: any = {};
+            json.districtName= (this.data[i].projectDTOs[j].projectDistrict) ? (this.data[i].projectDTOs[j].projectDistrict) : ''
+            json.proId = this.data[i].projectId;
+            json.line = this.data[i].lineDepartmentId;
+            json.project = this.data[i].projectTitle;
+            json.tenderAmount = (this.data[i].projectDTOs[j].projectTenderAmount) ? (this.data[i].projectDTOs[j].projectTenderAmount) : 0;
+            json.milestone = (this.data[i].projectDTOs[j].milestoneCount) ? this.data[i].projectDTOs[j].milestoneCount : 0;
+            json.physical = (this.data[i].projectDTOs[j].physicalProgressCompleted) ? this.data[i].projectDTOs[j].physicalProgressCompleted + '%' : 0 + '%';
+            json.financial = this.data[i].projectDTOs[j].financialProgress + '%';
+            json.delayDay = (this.data[i].projectDTOs[j].delayedDays) ? this.data[i].projectDTOs[j].delayedDays : 0;
+            json.damageCost = (this.data[i].projectDTOs[j].damageCost) ? (this.data[i].projectDTOs[j].damageCost) : 0;
+            arrval.push(json);
+          } else if (dist === '--') {
+            let json: any = {};
+            json.proId = this.data[i].projectId;
+            json.line = this.data[i].lineDepartmentId;
+            json.project = this.data[i].projectTitle;
+            json.tenderAmount = (this.data[i].projectDTOs[j].projectTenderAmount) ? (this.data[i].projectDTOs[j].projectTenderAmount) : 0;
+            json.milestone = (this.data[i].projectDTOs[j].milestoneCount) ? this.data[i].projectDTOs[j].milestoneCount : 0;
+            json.physical = (this.data[i].projectDTOs[j].physicalProgressCompleted) ? this.data[i].projectDTOs[j].physicalProgressCompleted + '%' : 0 + '%';
+            json.financial = this.data[i].projectDTOs[j].financialProgress + '%';
+            json.delayDay = (this.data[i].projectDTOs[j].delayedDays) ? this.data[i].projectDTOs[j].delayedDays : 0;
+            json.damageCost = (this.data[i].projectDTOs[j].damageCost) ? (this.data[i].projectDTOs[j].damageCost) : 0;
+            arrval.push(json);
+          }
+        }
+        
+        console.log("arrava",arrval)
+      // }
+    }
+    return arrval;
+  }
 
   renderMap() {
     fetch('assets/karnataka.json')
@@ -163,11 +201,11 @@ export class KarnatakaMapAppComponent implements OnInit {
             
                 
                 
-                for (let i = 0; i<this.projCount; i++) {
-                    this.projTitle.push(this.getDistrictProjectTitle(this.selectedDistrict));
-                  
-                }  console.log(this.projTitle,"lily")
-             
+                for (let i = 0; i<=this.projCount; i++) {
+                    this.getProjectDetails(this.selectedDistrict);
+                    this.projTitle.push(this.getProjectDetails(this.selectedDistrict));
+                }  
+                console.log(this.projTitle,"lily")
                 this.showTable();
               });
 
@@ -191,7 +229,7 @@ export class KarnatakaMapAppComponent implements OnInit {
   }
   getDistrictProjectTitles(districtName: string): any[] {
   const projects: any[] = [];
-  this.myData.forEach((item: any) => {
+  this.data.forEach((item: any) => {
     if (item.projectDTOs) {
       item.projectDTOs.forEach((project: any) => {
         if (project.projectDistrict === districtName) {
